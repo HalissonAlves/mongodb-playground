@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  name: String
+  name: String,
+  postCount: Number
 }, { timestamps: true });
 
 const User = mongoose.model('user', UserSchema);
