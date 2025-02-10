@@ -13,8 +13,12 @@ before((done) => {
 });
 
 beforeEach(async () => {
-  const { users } = mongoose.connection.collections;
-  if (users) {
-    await users.drop().catch(() => { });
-  }
+  const { users, comments, blogPosts } = mongoose.connection.collections;
+  await users.drop(() => {
+    // comments.drop(() => {
+    //   blogPosts.drop(() => {
+
+    //   });
+    // });
+  });
 });
