@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import PostSchema from './post.js';
+
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -10,7 +12,8 @@ const UserSchema = new Schema({
       message: 'Name must be longer than 2 characters.'
     },
   },
-  postCount: Number
+  postCount: Number,
+  posts: [PostSchema],
 }, { timestamps: true });
 
 const User = mongoose.model('user', UserSchema);
